@@ -11,17 +11,21 @@ const returnLastTwoDrivers = function(drivers){
 const selectingDrivers = [returnFirstTwoDrivers,returnLastTwoDrivers]
 
 function createFareMultiplier(num){
-  return quadruple = function(num){
-    return num * 5
+  return function(fare){
+    return fare * num
   }
 }
 
-function fareDoubler(num) {
-  return num * 2
+function fareDoubler(fare) {
+  // return num * 2
+  const doubler = createFareMultiplier(2)
+  return doubler(fare)
 }
 
-function fareTripler(num) {
-  return num * 3
+function fareTripler(fare) {
+  // return num * 3
+  const trippler = createFareMultiplier(3)
+  return trippler(fare)
 }
 
 const fetchSpecifiedDrivers = function(drivers,fn){
